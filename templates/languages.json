@@ -1,0 +1,272 @@
+{
+	"zh": [
+		{
+			"input": "請幫我寫一個 Python script 來處理這些 data，然後 generate 一份報表。",
+			"output": "Please help me write a Python script to process this data, then generate a report."
+		},
+		{
+			"input": "這個 function 的 time complexity 是多少？",
+			"output": "What is the time complexity of this function?"
+		},
+		{
+			"input": "我是說中文。",
+			"output": "I am speaking Chinese."
+		},
+		{
+			"input": "幫我看看有沒有循環複雜度問題。",
+			"output": "Help me check if there is any cyclomatic complexity issue."
+		},
+		{
+			"input": "幫我看看有沒有資安問題。",
+			"output": "Help me check if there are any security issues."
+		},
+		{
+			"input": "我目前正在開發一個基於 React 的 frontend application，但在處理 state management 時遇到了一些 performance bottleneck，請問有什麼最佳實踐可以優化 render 效率？",
+			"output": "I am currently developing a React-based frontend application, but encountered some performance bottlenecks when handling state management. What are the best practices to optimize render efficiency?"
+		},
+		{
+			"input": "我們的 backend microservices 架構目前遇到 memory leak 的狀況，特別是在處理大量 concurrent requests 的時候，請提供除錯的思路或推薦的 profiling tools。",
+			"output": "Our backend microservices architecture is currently experiencing memory leak issues, especially when handling a large number of concurrent requests. Please provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"ja": [
+		{
+			"input": "これをJavaScriptで書き換えてください。",
+			"output": "Please rewrite this in JavaScript."
+		},
+		{
+			"input": "この API の response time を改善したいです。",
+			"output": "I want to improve the response time of this API."
+		},
+		{
+			"input": "日本語で説明してください。",
+			"output": "Please explain in Japanese."
+		},
+		{
+			"input": "このコードの計算量を確認してください。",
+			"output": "Please check the time complexity of this code."
+		},
+		{
+			"input": "セキュリティ上の問題があるか確認してください。",
+			"output": "Please check if there are any security issues."
+		},
+		{
+			"input": "現在、React ベースの frontend application を開発していますが、state management の処理中に performance bottleneck に直面しています。render 効率を最適化するためのベストプラクティスを教えてください。",
+			"output": "I am currently developing a React-based frontend application, but encountered some performance bottlenecks when handling state management. Please tell me the best practices to optimize render efficiency."
+		},
+		{
+			"input": "backend の microservices アーキテクチャで、特に大量の concurrent requests を処理する際に memory leak が発生しています。デバッグのヒントや推奨される profiling tools を提供してください。",
+			"output": "In our backend microservices architecture, memory leaks are occurring, especially when processing a large amount of concurrent requests. Please provide debugging hints or recommended profiling tools."
+		}
+	],
+	"ko": [
+		{
+			"input": "이 코드에서 버그를 찾아주세요。",
+			"output": "Please find the bug in this code."
+		},
+		{
+			"input": "이 function의 memory leak을 해결하고 싶습니다。",
+			"output": "I want to resolve the memory leak in this function."
+		},
+		{
+			"input": "한국어로 설명해주세요。",
+			"output": "Please explain in Korean."
+		},
+		{
+			"input": "이 코드의 시간 복잡도를 확인해주세요。",
+			"output": "Please check the time complexity of this code."
+		},
+		{
+			"input": "보안 문제가 있는지 확인해주세요。",
+			"output": "Please check if there are any security issues."
+		},
+		{
+			"input": "현재 React 기반의 frontend application을 개발 중인데, state management를 처리할 때 performance bottleneck이 발생했습니다. render 효율성을 최적화하기 위한 모범 사례는 무엇입니까?",
+			"output": "I am currently developing a React-based frontend application, but a performance bottleneck occurred when handling state management. What are the best practices for optimizing render efficiency?"
+		},
+		{
+			"input": "우리 backend의 microservices 아키텍처가 현재 대량의 concurrent requests를 처리할 때 memory leak 문제를 겪고 있습니다. 디버깅 전략이나 추천하는 profiling tools를 제공해 주세요.",
+			"output": "Our backend microservices architecture is currently experiencing memory leak issues when handling a large amount of concurrent requests. Please provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"es": [
+		{
+			"input": "Ayúdame a refactorizar este código.",
+			"output": "Help me refactor this code."
+		},
+		{
+			"input": "Necesito optimizar el database query performance.",
+			"output": "I need to optimize the database query performance."
+		},
+		{
+			"input": "Por favor responde en español.",
+			"output": "Please respond in Spanish."
+		},
+		{
+			"input": "¿Cuál es la complejidad de este algoritmo?",
+			"output": "What is the complexity of this algorithm?"
+		},
+		{
+			"input": "¿Hay problemas de seguridad en este código?",
+			"output": "Are there any security issues in this code?"
+		},
+		{
+			"input": "Actualmente estoy desarrollando una frontend application basada en React, pero encontré algunos performance bottlenecks al manejar el state management. ¿Cuáles son las mejores prácticas para optimizar la eficiencia del render?",
+			"output": "I am currently developing a React-based frontend application, but encountered some performance bottlenecks when handling state management. What are the best practices to optimize render efficiency?"
+		},
+		{
+			"input": "Nuestra arquitectura de microservices en el backend está experimentando un memory leak, especialmente al manejar una gran cantidad de concurrent requests. Proporciona estrategias de depuración o profiling tools recomendadas.",
+			"output": "Our backend microservices architecture is experiencing a memory leak, especially when handling a large number of concurrent requests. Provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"ru": [
+		{
+			"input": "Проверь этот код на ошибки.",
+			"output": "Check this code for errors."
+		},
+		{
+			"input": "Нужно добавить logging в эту функцию.",
+			"output": "Need to add logging to this function."
+		},
+		{
+			"input": "Пожалуйста, отвечай на русском.",
+			"output": "Please respond in Russian."
+		},
+		{
+			"input": "Какова сложность этого алгоритма?",
+			"output": "What is the complexity of this algorithm?"
+		},
+		{
+			"input": "Есть ли проблемы с безопасностью?",
+			"output": "Are there any security issues?"
+		},
+		{
+			"input": "В настоящее время я разрабатываю frontend application на базе React, но столкнулся с некоторыми performance bottlenecks при работе со state management. Каковы лучшие практики для оптимизации эффективности render?",
+			"output": "I am currently developing a React-based frontend application, but encountered some performance bottlenecks when handling state management. What are the best practices to optimize render efficiency?"
+		},
+		{
+			"input": "Наша архитектура microservices в backend в настоящее время испытывает memory leak, особенно при обработке большого количества concurrent requests. Пожалуйста, предоставьте стратегии отладки или рекомендуемые profiling tools.",
+			"output": "Our backend microservices architecture is currently experiencing a memory leak, especially when processing a large number of concurrent requests. Please provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"fr": [
+		{
+			"input": "Peux-tu m'aider à déboguer ce script?",
+			"output": "Can you help me debug this script?"
+		},
+		{
+			"input": "Le error handling dans cette fonction n'est pas correct.",
+			"output": "The error handling in this function is not correct."
+		},
+		{
+			"input": "Réponds en français, s'il te plaît.",
+			"output": "Please respond in French."
+		},
+		{
+			"input": "Quelle est la complexité de cet algorithme ?",
+			"output": "What is the complexity of this algorithm?"
+		},
+		{
+			"input": "Y a-t-il des problèmes de sécurité ?",
+			"output": "Are there any security issues?"
+		},
+		{
+			"input": "Je développe actuellement une frontend application basée sur React, mais j'ai rencontré des performance bottlenecks lors de la gestion du state management. Quelles sont les meilleures pratiques pour optimiser l'efficacité du render ?",
+			"output": "I am currently developing a React-based frontend application, but encountered some performance bottlenecks when handling state management. What are the best practices to optimize render efficiency?"
+		},
+		{
+			"input": "Notre architecture de microservices backend subit actuellement un memory leak, en particulier lors du traitement d'un grand nombre de concurrent requests. Veuillez fournir des stratégies de débogage ou des profiling tools recommandés.",
+			"output": "Our backend microservices architecture is currently undergoing a memory leak, especially during the processing of a large number of concurrent requests. Please provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"de": [
+		{
+			"input": "Bitte überprüfe diesen Code auf Fehler.",
+			"output": "Please check this code for errors."
+		},
+		{
+			"input": "Die API response ist zu langsam, wie kann ich caching implementieren?",
+			"output": "The API response is too slow, how can I implement caching?"
+		},
+		{
+			"input": "Bitte antworte auf Deutsch.",
+			"output": "Please respond in German."
+		},
+		{
+			"input": "Wie hoch ist die Komplexität dieses Algorithmus?",
+			"output": "What is the complexity of this algorithm?"
+		},
+		{
+			"input": "Gibt es Sicherheitsprobleme in diesem Code?",
+			"output": "Are there any security issues in this code?"
+		},
+		{
+			"input": "Ich entwickle derzeit eine React-basierte frontend application, bin aber bei der Handhabung des state management auf performance bottlenecks gestoßen. Was sind die Best Practices zur Optimierung der render-Effizienz?",
+			"output": "I am currently developing a React-based frontend application, but encountered performance bottlenecks when handling state management. What are the best practices for optimizing render efficiency?"
+		},
+		{
+			"input": "Unsere backend microservices-Architektur leidet derzeit unter einem memory leak, insbesondere bei der Verarbeitung einer großen Anzahl von concurrent requests. Bitte geben Sie Debugging-Strategien oder empfohlene profiling tools an.",
+			"output": "Our backend microservices architecture currently suffers from a memory leak, especially when processing a large number of concurrent requests. Please provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"pt": [
+		{
+			"input": "Como posso melhorar este código?",
+			"output": "How can I improve this code?"
+		},
+		{
+			"input": "Preciso adicionar authentication ao API endpoint.",
+			"output": "I need to add authentication to the API endpoint."
+		},
+		{
+			"input": "Responda em português, por favor.",
+			"output": "Please respond in Portuguese."
+		},
+		{
+			"input": "Qual é a complexidade deste algoritmo?",
+			"output": "What is the complexity of this algorithm?"
+		},
+		{
+			"input": "Existem problemas de segurança neste código?",
+			"output": "Are there any security issues in this code?"
+		},
+		{
+			"input": "Atualmente, estou desenvolvendo uma frontend application baseada em React, mas encontrei alguns performance bottlenecks ao lidar com o state management. Quais são as melhores práticas para otimizar a eficiência do render?",
+			"output": "Currently, I am developing a React-based frontend application, but encountered some performance bottlenecks when handling state management. What are the best practices to optimize render efficiency?"
+		},
+		{
+			"input": "Nossa arquitetura de microservices no backend está sofrendo com um memory leak, especialmente ao lidar com um grande número de concurrent requests. Forneça estratégias de depuração ou profiling tools recomendadas.",
+			"output": "Our backend microservices architecture is suffering from a memory leak, especially when handling a large number of concurrent requests. Provide debugging strategies or recommended profiling tools."
+		}
+	],
+	"it": [
+		{
+			"input": "Spiegami come funziona questo algoritmo.",
+			"output": "Explain to me how this algorithm works."
+		},
+		{
+			"input": "Devo implementare il rate limiting per le API calls.",
+			"output": "I need to implement rate limiting for the API calls."
+		},
+		{
+			"input": "Per favore rispondi in italiano.",
+			"output": "Please respond in Italian."
+		},
+		{
+			"input": "Qual è la complessità di questo algoritmo?",
+			"output": "What is the complexity of this algorithm?"
+		},
+		{
+			"input": "Ci sono problemi di sicurezza in questo codice?",
+			"output": "Are there any security issues in this code?"
+		},
+		{
+			"input": "Sto attualmente sviluppando una frontend application basata su React, ma ho riscontrato alcuni performance bottlenecks durante la gestione dello state management. Quali sono le best practice per ottimizzare l'efficienza del render?",
+			"output": "I am currently developing a React-based frontend application, but encountered some performance bottlenecks during the management of state management. What are the best practices to optimize render efficiency?"
+		},
+		{
+			"input": "La nostra architettura backend a microservices sta attualmente riscontrando un memory leak, specialmente durante la gestione di un gran numero di concurrent requests. Fornisci strategie di debug o profiling tools raccomandati.",
+			"output": "Our microservices backend architecture is currently experiencing a memory leak, especially during the handling of a large number of concurrent requests. Provide debug strategies or recommended profiling tools."
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"name": "prompt2eng",
+	"description": "CLI tool to generate customized prompt2eng skills that rewrite inputs into CEFR-leveled English for LLM consumption",
+	"type": "module",
+	"bin": {
+		"prompt2eng": "./dist/cli.js"
+	},
+	"files": [
+		"dist/**/*.js",
+		"dist/**/*.d.ts",
+		"dist/**/*.map",
+		"!dist/**/*.test.*",
+		"templates"
+	],
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"build": "tsc",
+		"prepublishOnly": "npm run build",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"format": "biome format --write"
+	},
+	"dependencies": {
+		"bcp-47": "^2.1.0",
+		"chalk": "^5.6.2",
+		"commander": "^14.0.3",
+		"handlebars": "^4.7.9",
+		"homedir-polyfill": "^1.0.3",
+		"iso-639-3": "^3.0.1",
+		"prompts": "^2.4.2"
+	},
+	"devDependencies": {
+		"@types/node": "^25.5.0",
+		"@types/prompts": "^2.4.9",
+		"typescript": "^6.0.2",
+		"vitest": "^4.1.2"
+	},
+	"keywords": [
+		"prompt2eng",
+		"skill",
+		"opencode",
+		"claude",
+		"codex",
+		"gemini",
+		"ai-agents",
+		"i18n",
+		"translation"
+	],
+	"author": "whchi",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/whchi/prompt2eng"
+	},
+	"bugs": {
+		"url": "https://github.com/whchi/prompt2eng/issues"
+	},
+	"homepage": "https://github.com/whchi/prompt2eng#readme"
+}

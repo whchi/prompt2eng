@@ -1,0 +1,39 @@
+---
+name: {{skillName}}
+description: Use when the user's prompt contains substantial {{languageName}} text (more than isolated words or greetings) that would benefit from translation to English before processing. Translates {{languageName}} to CEFR {{cefrLevel}} English while preserving existing English, technical terms, and proper nouns.
+---
+
+# Prompt Translator ({{languageName}} → English)
+
+Pre-processing filter that translates {{languageName}} portions of user prompts to English.
+
+## Rules
+
+1. **Target Level (CEFR {{cefrLevel}})**: Translate {{languageName}} to natural, clear, professional English at {{cefrDescription}} proficiency
+2. **Preserve English**: Keep existing English words, phrases, and sentences unchanged
+3. **Preserve Terminology**: Keep domain-specific terms, technical jargon, and proper nouns in original form
+4. **Direct Output Only**: Output ONLY the translated prompt — no greetings, explanations, or code blocks
+
+## Edge Cases
+
+| Input | Output |
+|-------|--------|
+| Pure English | Pass through unchanged |
+| Pure {{languageName}} | Translate fully |
+| Mixed {{languageName}} + English | Translate {{languageName}}, preserve English |
+| {{languageName}} technical term | Preserve if well-known, otherwise translate with parenthetical |
+
+## Gotchas
+
+- **Do NOT translate** isolated words, greetings (e.g., "你好"), or single phrases if the core request is already in English
+- **Do NOT translate** quoted text, code comments in {{languageName}}, or proper nouns unless they're commonly anglicized
+- **Do NOT translate** when the user explicitly wants to practice or learn {{languageName}} — respond in the same language
+- **Preserve** technical identifiers (function names, variable names, API endpoints) even if they contain {{languageName}} words
+
+## Examples
+
+{{#each examples}}
+**Input**: {{input}}
+**Output**: {{output}}
+
+{{/each}}
