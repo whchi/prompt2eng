@@ -7,9 +7,10 @@
 	},
 	"files": [
 		"dist/**/*.js",
-		"dist/**/*.d.ts",
 		"dist/**/*.map",
+        "!dist/**/*.ts.map",
 		"!dist/**/*.test.*",
+        "!dist/**/*.d.ts",
 		"templates"
 	],
 	"engines": {
