@@ -1,7 +1,9 @@
 import prompts from 'prompts';
 import chalk from 'chalk';
+import { homedir } from 'node:os';
 import {
 	type ToolTarget,
+	type Tool,
 	getTargetFromTool,
 	getProjectTarget,
 } from './paths.js';
@@ -10,7 +12,7 @@ import { generateSkill } from './generate.js';
 import { installConfig } from './install.js';
 
 export interface InteractiveResult {
-	tool: 'claude' | 'other';
+	tool: Tool;
 	lang: string;
 	cefr: CEFRLevel;
 	target: ToolTarget;
@@ -69,28 +71,6 @@ function getRegionChoices(baseLang: string) {
 	}));
 }
 
-const REGION_OPTIONS = [
-	{ title: 'TW — Taiwan', value: 'TW' },
-	{ title: 'HK — Hong Kong', value: 'HK' },
-	{ title: 'CN — China', value: 'CN' },
-	{ title: 'US — United States', value: 'US' },
-	{ title: 'GB — United Kingdom', value: 'GB' },
-	{ title: 'CA — Canada', value: 'CA' },
-	{ title: 'AU — Australia', value: 'AU' },
-	{ title: 'SG — Singapore', value: 'SG' },
-	{ title: 'IN — India', value: 'IN' },
-	{ title: 'JP — Japan', value: 'JP' },
-	{ title: 'KR — South Korea', value: 'KR' },
-	{ title: 'ES — Spain', value: 'ES' },
-	{ title: 'MX — Mexico', value: 'MX' },
-	{ title: 'RU — Russia', value: 'RU' },
-	{ title: 'FR — France', value: 'FR' },
-	{ title: 'DE — Germany', value: 'DE' },
-	{ title: 'CH — Switzerland', value: 'CH' },
-	{ title: 'BR — Brazil', value: 'BR' },
-	{ title: '(none)', value: '' },
-];
-
 const CEFR_OPTIONS = [
 	{ title: 'A1 — Beginner', value: 'A1' },
 	{ title: 'A2 — Elementary', value: 'A2' },
@@ -102,27 +82,33 @@ const CEFR_OPTIONS = [
 
 const TOOL_NAMES: Record<string, string> = {
 	opencode: 'OpenCode',
-	claude: 'Claude',
+	claude: 'Claude Code',
+	cursor: 'Cursor',
+	codex: 'Codex',
+	'gemini-cli': 'Gemini CLI',
+	'github-copilot': 'GitHub Copilot',
+	antigravity: 'Antigravity',
+	kiro: 'Kiro CLI',
 	other: 'Other',
-};
-
-const SCOPE_PATHS: Record<string, Record<string, string>> = {
-	global: {
-		opencode: '~/.config/opencode/skills',
-		claude: '~/.claude/skills',
-		other: '~/.agents/skills',
-	},
-	project: {
-		opencode: '.opencode/skills',
-		claude: '.claude/skills',
-		other: '.agents/skills',
-	},
 };
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 
 function aborted(value: unknown): boolean {
 	return value === undefined;
+}
+
+function getScopePath(tool: string, scope: 'global' | 'project'): string {
+	const fakeTarget =
+		scope === 'global'
+			? getTargetFromTool(tool as Tool)
+			: getProjectTarget(tool as Tool, process.cwd());
+	return scope === 'global'
+		? fakeTarget.skillsDir.replace(homedir(), '~').replace(/\/prompt2eng$/, '')
+		: fakeTarget.skillsDir
+				.replace(process.cwd(), '')
+				.replace(/^\//, '')
+				.replace(/\/prompt2eng$/, '');
 }
 
 // ── main ──────────────────────────────────────────────────────────────────────
@@ -138,7 +124,13 @@ export async function runInteractive(): Promise<void> {
 		choices: [
 			{ title: 'opencode', value: 'opencode' },
 			{ title: 'claude code', value: 'claude' },
-			{ title: 'other (support .agents/ like codex, gemini…)', value: 'other' },
+			{ title: 'cursor', value: 'cursor' },
+			{ title: 'codex', value: 'codex' },
+			{ title: 'gemini cli', value: 'gemini-cli' },
+			{ title: 'github copilot', value: 'github-copilot' },
+			{ title: 'antigravity', value: 'antigravity' },
+			{ title: 'kiro cli', value: 'kiro' },
+			{ title: 'other (.agents/ like cline…)', value: 'other' },
 		],
 	});
 	if (aborted(tool)) return cancel();
@@ -150,11 +142,11 @@ export async function runInteractive(): Promise<void> {
 		message: 'Where do you want to install the skill?',
 		choices: [
 			{
-				title: `Global  (${SCOPE_PATHS.global[tool] ?? SCOPE_PATHS.global.other})`,
+				title: `Global  (${getScopePath(tool, 'global')})`,
 				value: 'global',
 			},
 			{
-				title: `Project  (${SCOPE_PATHS.project[tool] ?? SCOPE_PATHS.project.other})`,
+				title: `Project  (${getScopePath(tool, 'project')})`,
 				value: 'project',
 			},
 		],
@@ -170,7 +162,7 @@ export async function runInteractive(): Promise<void> {
 		),
 	);
 
-	// Step 2 — base language
+	// Step 3 — base language
 	const languageChoices = buildLanguageChoices();
 	const { baseLang } = await prompts({
 		type: 'autocomplete',
@@ -190,7 +182,7 @@ export async function runInteractive(): Promise<void> {
 	});
 	if (aborted(baseLang)) return cancel();
 
-	// Step 3 — region
+	// Step 4 — region
 	const regionChoices = getRegionChoices(baseLang);
 	let region = '';
 
@@ -230,8 +222,8 @@ export async function runInteractive(): Promise<void> {
 		chalk.gray('  Scope:    ') +
 			chalk.cyan(
 				scope === 'global'
-					? `Global (${SCOPE_PATHS.global[tool] ?? SCOPE_PATHS.global.other})`
-					: `Project (${SCOPE_PATHS.project[tool] ?? SCOPE_PATHS.project.other})`,
+					? `Global (${getScopePath(tool, 'global')})`
+					: `Project (${getScopePath(tool, 'project')})`,
 			),
 	);
 	console.log(chalk.gray('  Language: ') + chalk.cyan(finalTag));

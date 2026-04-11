@@ -25,9 +25,15 @@ prompt2eng
 ### Interactive Flow
 
 1. **Select AI Tool**
-   - `opencode` — for OpenCode CLI
-   - `claude code` — for claude.ai / Claude Code
-   - `other` — support `.agents` and `AGENTS.md`, like Codex, Gemini...
+   - `opencode` — OpenCode
+   - `claude code` — Claude Code
+   - `cursor` — Cursor
+   - `codex` — Codex
+   - `gemini cli` — Gemini CLI
+   - `github copilot` — GitHub Copilot
+   - `antigravity` — Antigravity
+   - `kiro cli` — Kiro CLI
+   - `other` — any `.agents`-compatible tool (Cline, Kiro…)
 
 2. **Select Language** (BCP-47 tag)
    - Choose from supported languages: zh, ja, ko, es, ru, fr, de, pt, it
@@ -68,29 +74,29 @@ Prompt To english Skill Generator
 
 ## Installation Paths
 
-### OpenCode
-- Skills directory: `~/.config/opencode/skills/prompt2eng/`
-- Config file: `~/.config/opencode/AGENTS.md`
-
-### Claude
-- Skills directory: `~/.claude/skills/prompt2eng/`
-- Config file: `~/.claude/CLAUDE.md`
-
-### Other (Codex, Gemini, etc.)
-- Skills directory: `~/.agents/skills/prompt2eng/`
-- Config file: `~/.agents/AGENTS.md`
+| Tool | Config File | Global Skills Dir | Project Skills Dir |
+| ---- | ----------- | ----------------- | ------------------ |
+| OpenCode | `AGENTS.md` | `~/.config/opencode/skills/prompt2eng/` | `.opencode/skills/prompt2eng/` |
+| Claude Code | `CLAUDE.md` | `~/.claude/skills/prompt2eng/` | `.claude/skills/prompt2eng/` |
+| Cursor | `.cursorrules` | `~/.cursor/skills/prompt2eng/` | `.agents/skills/prompt2eng/` |
+| Codex | `AGENTS.md` | `~/.codex/skills/prompt2eng/` | `.agents/skills/prompt2eng/` |
+| Gemini CLI | `GEMINI.md` | `~/.gemini/skills/prompt2eng/` | `.agents/skills/prompt2eng/` |
+| GitHub Copilot | `AGENTS.md` | `~/.copilot/skills/prompt2eng/` | `.agents/skills/prompt2eng/` |
+| Antigravity | `AGENTS.md` | `~/.gemini/antigravity/skills/prompt2eng/` | `.agents/skills/prompt2eng/` |
+| Kiro CLI | `AGENTS.md` | `~/.kiro/skills/prompt2eng/` | `.kiro/skills/prompt2eng/` |
+| Other | `AGENTS.md` | `~/.agents/skills/prompt2eng/` | `.agents/skills/prompt2eng/` |
 
 ## Configuration File Update
 
 The CLI will:
 
-1. **Scan** for existing `CLAUDE.md` or `AGENTS.md`
+1. **Scan** for existing config files (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`)
 2. **If found**: Ask whether to add the skill to `## Required Skills`
 3. **If not found**: Print a snippet for you to add manually
 
 ### Manual Snippet
 
-If no config file exists, add this to your `AGENTS.md` or `CLAUDE.md`:
+If no config file exists, add this to your `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or `.cursorrules`:
 
 ```markdown
 ## Required Skills
